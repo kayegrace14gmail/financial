@@ -1,19 +1,8 @@
 
 <?php
 // Connect to the database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "financial_management";
-
-// Create a new connection object
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn -> connect_errno) {
-  echo "Failed to connect to MySQL: " . $conn -> connect_error;
-  exit();
-}
+include 'connection\db_connection.php';
+session_start();
 
 // Retrieve the list of borrowers from the database
 $sql = 'SELECT * FROM borrowers';
@@ -62,8 +51,25 @@ $result = $conn -> query($sql);
       padding: 1px 1px 1px 1px; 
     }
 
-
   </style>
+
+<script>
+    // Get the reference to the div element
+    var divElement = document.getElementById("message-container");
+
+    // Function to remove the div from the DOM
+    function removeDiv() {
+        divElement.parentNode.removeChild(divElement);
+    }
+
+    // Add the 'removeDiv' function as an event listener for 'transitionend' event
+    divElement.addEventListener("transitionend", removeDiv);
+
+    // Trigger the fade-out effect after a short delay
+    setTimeout(function () {
+        divElement.classList.add("fade-out");
+    }, 2000); // Delay of 2 second (2000 milliseconds)
+</script>
 
 </head>
 
@@ -321,6 +327,21 @@ $result = $conn -> query($sql);
 
   <main id="main" class="main">
 
+  <?php if(isset($_SESSION['message'])) {?>
+    <div class="container" id="message-container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="alert alert-success d-flex justify-content-between align-items-center">
+                   <?php echo $_SESSION['message']; ?>
+                   <!-- add button for removing the alert message -->
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php } unset($_SESSION['message']); ?>
+
+
   <section>
   <div class="container">
     <h1>List of Borrowers</h1>
@@ -392,6 +413,7 @@ $result = $conn -> query($sql);
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 
 </body>
 

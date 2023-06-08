@@ -1,5 +1,5 @@
 <?php  
-// session_start();
+session_start();
 // if(!isset($_SESSION["username"])){
 //     header('location:index.php');
 // }
@@ -299,6 +299,20 @@
 
   <main id="main" class="main">
 
+  <?php if(isset($_SESSION['message'])) {?>
+    <div class="container" id="message-container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="alert alert-danger d-flex justify-content-between align-items-center">
+                   <?php echo $_SESSION['message']; ?>
+                   <!-- add button for removing the alert message -->
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php } unset($_SESSION['message']); ?>
+
   <section class="section">
       <!--form for adding borrowers-->
       <form method="POST" action="add-borrowers.php" class="col-lg-6">
@@ -417,11 +431,30 @@ if ($_SERVER['REQUEST_METHOD'] ==='POST') {
   $email = $conn->real_escape_string($_POST['email']);
   $location = $conn->real_escape_string($_POST['location']);
   $district = mysqli_real_escape_string($conn, $_POST['district']);
-// echo $district;
+
+
+
+  $ninQuery = "SELECT * FROM borrowers WHERE ninNumber = '$ninNumber'";
+  $ninResult = $conn->query($ninQuery);
+  if ($ninResult->num_rows > 0) {
+      $_SESSION['message'] = "Borrower NIN already exists in the database.";
+      echo "<script>window.location.href = 'add-borrowers.php';</script>";
+      exit;
+  }
+
+  $phoneQuery = "SELECT * FROM borrowers WHERE phone = '$phone'";
+  $phoneResult = $conn->query($phoneQuery);
+  if ($phoneResult->num_rows > 0) {
+      $_SESSION['message'] = "Phone number already exists";
+      echo "<script>window.location.href = 'add-borrowers.php';</script>";
+      exit;
+  }
+
 $sql =  "insert into borrowers(firstname,lastname,ninNumber,title,gender,phone, email, location, district) 
 values('$firstname','$lastname','$ninNumber','$title','$gender','$phone', '$email', '$location', '$district')";
 
 if ($conn->query($sql) === TRUE) {
+$_SESSION['message'] = "Borrower added successfully";
 echo "<script>window.location.href = 'view-borrowers.php';</script>";
 exit;
 } else {
