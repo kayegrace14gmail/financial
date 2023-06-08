@@ -360,6 +360,7 @@ $result = $conn -> query($sql);
           <th scope="col">Group Name</th>
           <th scope="col">Location</th>
           <th scope="col">Contact</th>
+          <th scope="col">Leader</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
@@ -373,6 +374,7 @@ $result = $conn -> query($sql);
             <td> <?php echo $borrower_group['name']; ?></td>
             <td><?php echo $borrower_group['location']; ?></td>
             <td><?php echo $borrower_group['contact']; ?></td>
+            <td><?php echo $borrower_group['leader']; ?></td>
             <td>
               <a title="Edit" href="edit-borrower-group.php?id=<?php echo $borrower_group['id']; ?>" class="text-primary"><i class="bi bi-pencil-square"></i></a>
               <a title="Delete" href="delete-borrower-group.php?id=<?php echo $borrower_group['id']; ?>" class="text-danger"><i class="bi bi-trash"></i></a>

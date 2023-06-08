@@ -5,7 +5,7 @@ include 'connection\db_connection.php';
 session_start();
 
 // Retrieve the list of borrowers from the database
-$sql = 'SELECT * FROM borrowers';
+$sql = 'SELECT * FROM borrowers ORDER BY created_at DESC';
 $result = $conn -> query($sql);
 
 ?>
@@ -356,6 +356,7 @@ $result = $conn -> query($sql);
     <table class="table datatable table-striped">
       <thead class="thead-dark">
         <tr>
+          <th scope="col">Actions</th>
           <th scope="col">NIN</th>
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
@@ -365,7 +366,7 @@ $result = $conn -> query($sql);
           <th scope="col">Email</th>
           <th scope="col">Location</th>
           <th scope="col">District</th>
-          <th scope="col">Actions</th>
+         
         
         </tr>
       </thead>
@@ -373,7 +374,11 @@ $result = $conn -> query($sql);
 
         <?php while ($borrower = $result -> fetch_assoc()) { ?>
           <tr>
-            <td scope="row"><?php echo $borrower['ninNumber']; ?></td>
+          <td scope="row">
+              <a href="#" title="Edit" class="text-success"><i class="bi bi-pencil-square"></i></a>
+              <a href="#" title="Delete" class="text-danger"><i class="bi bi-trash-fill"></i></a>
+            </td>
+            <td><?php echo $borrower['ninNumber']; ?></td>
             <td><?php echo $borrower['firstname']; ?></td>
             <td><?php echo $borrower['lastname']; ?></td>
             <td><?php echo $borrower['title']; ?></td>
@@ -382,10 +387,6 @@ $result = $conn -> query($sql);
             <td><?php echo $borrower['email']; ?></td>
             <td><?php echo $borrower['location']; ?></td>
             <td><?php echo $borrower['district']; ?></td>
-            <td>
-              <a href="#" title="Edit" class="btn btn-sm btn-success"><i class="bi bi-pencil-square"></i></a>
-              <a href="#" title="Delete" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
-            </td>
           </tr>
         <?php } ?>
       </tbody>

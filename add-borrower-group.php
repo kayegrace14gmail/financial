@@ -333,7 +333,12 @@ session_start();
   
   <div class="form-group mt-2">
     <label for="title">Contact</label>
-    <input type="text" name="contact" id="title" class="form-control form-control-user">
+    <input type="text" placeholder="Phone Number: 0700000000" pattern="[0]{1}[7]{1}[0-9]{8}" name="contact" id="title" class="form-control form-control-user">
+  </div>
+
+  <div class="form-group mt-2">
+    <label for="title">Group leader</label>
+    <input type="text" name="leader" id="title" class="form-control form-control-user">
   </div>
   
   <div class="form-group mt-2">
@@ -386,6 +391,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $group_name = $conn->real_escape_string($_POST['group_name']);
   $location = $conn->real_escape_string($_POST['location']);
   $contact = $conn->real_escape_string($_POST['contact']);
+  $leader = $conn->real_escape_string($_POST['leader']);
 
 
 
@@ -397,7 +403,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
   }
 
-$sql =  "insert into borrower_groups (name,location,contact) VALUES('$group_name','$location','$contact')";
+$sql =  "insert into borrower_groups (name,location,contact,leader) VALUES('$group_name','$location','$contact','$leader')";
   if ($conn->query($sql) === TRUE) {
     $_SESSION['message'] = "Borrower group added successfully";
     echo "<script>window.location.href = 'view-borrower-groups.php';</script>";

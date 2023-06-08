@@ -1,4 +1,5 @@
 <?php
+include 'connection/db_connection.php';
 session_start();
 // if(!isset($_SESSION["username"])){
 //     header('location:index.php');
@@ -330,6 +331,25 @@ session_start();
           <input type="text" name="lastname" id="lastname" class="form-control form-control-user" required>
         </div>
 
+        <div class="form-group mt-1">
+          <label for="group">Group</label>
+          <select name="group" id="group" class="form-control form-control-user" required>
+            <option value="">Select Group</option>
+
+            <?php 
+                $groupQuery = "SELECT * FROM borrower_groups";
+                $groups= $conn -> query($groupQuery);
+                while($group = $groups->fetch_assoc()) {
+                  ?>
+                  <option value="<?php echo $group['id'] ?>" > <?php echo $group['name'] ?> </option>
+                  <?php
+                }
+            ?>
+
+          </select>
+        </div>
+
+
         <div class="form-group mt-1 ">
           <label for="ninNumber">NIN Number:</label>
           <input type="text" name="ninNumber" id="ninNumber" class="form-control form-control-user" required>
@@ -368,7 +388,6 @@ session_start();
           <label for="district">District:</label>
           <input type="text" name="district" id="district" class="form-control form-control-user" required>
         </div>
-
 
         <div class="form-group mt-2">
         <input type="submit" name="submit" class="btn btn-primary btn-user btn-block" value="Register">
@@ -414,14 +433,13 @@ session_start();
 
 
 <?php
-include 'connection/db_connection.php';
-
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Validate and sanitize the form input
   $firstname = $conn->real_escape_string($_POST['firstname']);
   $lastname = $conn->real_escape_string($_POST['lastname']);
   $ninNumber = $conn->real_escape_string($_POST['ninNumber']);
+  $group_id = $conn->real_escape_string($_POST['group']);
   $title = $conn->real_escape_string($_POST['title']);
   $gender = $conn->real_escape_string($_POST['gender']);
   $phone = $conn->real_escape_string($_POST['phone']);
@@ -447,8 +465,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
   }
 
-  $sql =  "insert into borrowers(firstname,lastname,ninNumber,title,gender,phone, email, location, district) 
-values('$firstname','$lastname','$ninNumber','$title','$gender','$phone', '$email', '$location', '$district')";
+  $sql =  "insert into borrowers(firstname,lastname,ninNumber,title,gender,phone, email, location, district, group_id) 
+values('$firstname','$lastname','$ninNumber','$title','$gender','$phone', '$email', '$location', '$district', $group_id )";
 
   if ($conn->query($sql) === TRUE) {
     $_SESSION['message'] = "Borrower added successfully";
