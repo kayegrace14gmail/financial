@@ -1,3 +1,15 @@
+
+<?php
+// Connect to the database
+include 'connection\db_connection.php';
+session_start();
+
+// Retrieve the list of borrowers from the database
+$sql = 'SELECT * FROM borrower_groups';
+$result = $conn -> query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +17,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Components / Badges - NiceAdmin Bootstrap Template</title>
+  <title>Components / Alerts - NiceAdmin Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -29,13 +41,44 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Mar 09 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    i {
+      /* padding: 0px 0px 0px 0px; */
+      font-size: 20px;
+    }
+
+    .table a {
+      padding: 1px 1px 1px 1px; 
+    }
+
+    input[type="search"] {
+      width: 100%;
+      padding: 5px 5px 5px 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+  </style>
+
+<script>
+    // Get the reference to the div element
+    var divElement = document.getElementById("message-container");
+
+    // Function to remove the div from the DOM
+    function removeDiv() {
+        divElement.parentNode.removeChild(divElement);
+    }
+
+    // Add the 'removeDiv' function as an event listener for 'transitionend' event
+    divElement.addEventListener("transitionend", removeDiv);
+
+    // Trigger the fade-out effect after a short delay
+    setTimeout(function () {
+        divElement.classList.add("fade-out");
+    }, 2000); // Delay of 2 second (2000 milliseconds)
+</script>
+
 </head>
 
 <body>
@@ -67,6 +110,7 @@
           </a>
         </li><!-- End Search Icon-->
 
+       
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -139,8 +183,7 @@
           <span>Home Branch</span>
         </a>
       </li><!-- End Dashboard Nav -->
-
-      <li class="nav-item">
+<li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Borrowers</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -286,138 +329,60 @@
           <span>Blank</span>
         </a>
       </li><!-- End Blank Page Nav -->
-
     </ul>
 
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
-    <div class="pagetitle">
-      <h1>Badges</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Components</li>
-          <li class="breadcrumb-item active">Badges</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
-
-    <section class="section">
-      <div class="row">
-
-        <div class="col-lg-6">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Default Badges</h5>
-
-              <span class="badge bg-primary">Primary</span>
-              <span class="badge bg-secondary">Secondary</span>
-              <span class="badge bg-success">Success</span>
-              <span class="badge bg-danger">Danger</span>
-              <span class="badge bg-warning text-dark">Warning</span>
-              <span class="badge bg-info text-dark">Info</span>
-              <span class="badge bg-light text-dark">Light</span>
-              <span class="badge bg-dark">Dark</span>
+  <?php if(isset($_SESSION['message'])) {?>
+    <div class="container" id="message-container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="alert alert-success d-flex justify-content-between align-items-center">
+                   <?php echo $_SESSION['message']; ?>
+                   <!-- add button for removing the alert message -->
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             </div>
-          </div><!-- End Default Badges -->
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Pill Badges</h5>
-              <span class="badge rounded-pill bg-primary">Primary</span>
-              <span class="badge rounded-pill bg-secondary">Secondary</span>
-              <span class="badge rounded-pill bg-success">Success</span>
-              <span class="badge rounded-pill bg-danger">Danger</span>
-              <span class="badge rounded-pill bg-warning text-dark">Warning</span>
-              <span class="badge rounded-pill bg-info text-dark">Info</span>
-              <span class="badge rounded-pill bg-light text-dark">Light</span>
-              <span class="badge rounded-pill bg-dark">Dark</span>
-            </div>
-          </div><!-- End Pill Badges -->
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Icon Badges</h5>
-              <span class="badge bg-primary"><i class="bi bi-star me-1"></i> Primary</span>
-              <span class="badge bg-secondary"><i class="bi bi-collection me-1"></i> Secondary</span>
-              <span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Success</span>
-              <span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Danger</span>
-              <span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i> Warning</span>
-              <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i> Info</span>
-              <span class="badge bg-light text-dark"><i class="bi bi-star me-1"></i> Light</span>
-              <span class="badge bg-dark"><i class="bi bi-folder me-1"></i> Dark</span>
-            </div>
-          </div><!-- End Icon Badges -->
-
         </div>
+    </div>
+    <?php } unset($_SESSION['message']); ?>
 
-        <div class="col-lg-6">
+  <section>
+  <div class="container">
+    <h1>Borrower Groups</h1>
+    <table class="table datatable table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">view</th>
+          <th scope="col">ID</th>
+          <th scope="col">Group Name</th>
+          <th scope="col">Location</th>
+          <th scope="col">Contact</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Border Badges</h5>
-              <span class="badge border-primary border-1 text-primary">Primary</span>
-              <span class="badge border-secondary border-1 text-secondary">Secondary</span>
-              <span class="badge border-success border-1 text-success">Success</span>
-              <span class="badge border-danger border-1 text-danger">Danger</span>
-              <span class="badge border-warning border-1 text-warning">Warning</span>
-              <span class="badge border-info border-1 text-info">Info</span>
-              <span class="badge border-light border-1 text-black-50">Light</span>
-              <span class="badge border-dark border-1 text-dark">Dark</span>
-            </div>
-          </div><!-- End Border Badges -->
+        <?php while ($borrower_group = $result -> fetch_assoc()) { ?>
+         
+          <tr>
+            <td scope="row"><a href="#" title="View"><i class="bi bi-eye-fill"></i></a></td>
+            <td><?php echo $borrower_group['id']; ?></td>
+            <td> <?php echo $borrower_group['name']; ?></td>
+            <td><?php echo $borrower_group['location']; ?></td>
+            <td><?php echo $borrower_group['contact']; ?></td>
+            <td>
+              <a title="Edit" href="edit-borrower-group.php?id=<?php echo $borrower_group['id']; ?>" class="text-primary"><i class="bi bi-pencil-square"></i></a>
+              <a title="Delete" href="delete-borrower-group.php?id=<?php echo $borrower_group['id']; ?>" class="text-danger"><i class="bi bi-trash"></i></a>
+          </tr>
+        <?php }?>
+      </tbody>
+    </table>
+  </div>
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Button Badges</h5>
-
-              <button type="button" class="btn btn-primary mb-2">
-                Primary <span class="badge bg-white text-primary">4</span>
-              </button>
-              <button type="button" class="btn btn-secondary mb-2">
-                Secondary <span class="badge bg-white text-secondary">4</span>
-              </button>
-              <button type="button" class="btn btn-success mb-2">
-                Success <span class="badge bg-white text-success">4</span>
-              </button>
-              <button type="button" class="btn btn-danger mb-2">
-                Danger <span class="badge bg-white text-danger">4</span>
-              </button>
-              <button type="button" class="btn btn-warning mb-2">
-                Warning <span class="badge bg-white text-warning">4</span>
-              </button>
-              <button type="button" class="btn btn-info mb-2">
-                Info <span class="badge bg-white text-info">4</span>
-              </button>
-              <button type="button" class="btn btn-light mb-2">
-                Light <span class="badge bg-secondary text-light">4</span>
-              </button>
-              <button type="button" class="btn btn-dark mb-2">
-                Dark <span class="badge bg-white text-dark">4</span>
-              </button>
-            </div>
-          </div><!-- End Button Badges -->
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Heading Badges</h5>
-
-              <h1>Example h1 heading <span class="badge bg-primary">Primary</span></h1>
-              <h2>Example h2 heading <span class="badge bg-secondary">Secondary</span></h2>
-              <h3>Example h3 heading <span class="badge bg-success">Success</span></h3>
-              <h4>Example h4 heading <span class="badge bg-danger">Danger</span></h4>
-              <h5>Example h5 heading <span class="badge bg-warning">Warning</span></h5>
-              <h6>Example h6 heading <span class="badge bg-info">Info</span></h6>
-            </div>
-          </div><!-- End Heading Badges -->
-
-        </div>
-
-      </div>
-    </section>
+  </section>
 
   </main><!-- End #main -->
 
@@ -427,10 +392,7 @@
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer><!-- End Footer -->
@@ -449,6 +411,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 
 </body>
 

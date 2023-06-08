@@ -51,6 +51,14 @@ $result = $conn -> query($sql);
       padding: 1px 1px 1px 1px; 
     }
 
+    input[type="search"] {
+      width: 100%;
+      padding: 5px 5px 5px 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
   </style>
 
 <script>

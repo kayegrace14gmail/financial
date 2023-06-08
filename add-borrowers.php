@@ -1,4 +1,4 @@
-<?php  
+<?php
 session_start();
 // if(!isset($_SESSION["username"])){
 //     header('location:index.php');
@@ -147,13 +147,13 @@ session_start();
         </a>
       </li><!-- End Dashboard Nav -->
 
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Borrowers</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
-         <li>
+          <li>
             <a href="view-borrowers.html">
               <i class="bi bi-circle"></i><span>View Borrowers</span>
             </a>
@@ -183,7 +183,7 @@ session_start();
             <a href="#">
               <i class="bi bi-circle"></i><span>Send SMS to all Borrowers</span>
             </a>
-        
+
         </ul>
       </li><!-- End Borrowers Nav -->
 
@@ -203,7 +203,7 @@ session_start();
             </a>
           </li>
           <li>
-          <a href="due-loans.html">
+            <a href="due-loans.html">
               <i class="bi bi-circle"></i><span>Due Loan</span>
             </a>
           </li>
@@ -299,85 +299,82 @@ session_start();
 
   <main id="main" class="main">
 
-  <?php if(isset($_SESSION['message'])) {?>
-    <div class="container" id="message-container">
+    <?php if (isset($_SESSION['message'])) { ?>
+      <div class="container" id="message-container">
         <div class="row">
-            <div class="col-md-12">
+          <div class="col-md-12">
             <div class="alert alert-danger d-flex justify-content-between align-items-center">
-                   <?php echo $_SESSION['message']; ?>
-                   <!-- add button for removing the alert message -->
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+              <?php echo $_SESSION['message']; ?>
+              <!-- add button for removing the alert message -->
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+          </div>
         </div>
-    </div>
-    <?php } unset($_SESSION['message']); ?>
+      </div>
+    <?php }
+    unset($_SESSION['message']); ?>
 
-  <section class="section">
+    <section class="section">
       <!--form for adding borrowers-->
       <form method="POST" action="add-borrowers.php" class="col-lg-6">
         <div>
           <h1 class="h3 mb-4 text-gray-800">Fill the form bellow to add a borrower</h1>
         </div>
-  <div class="form-group">
-    <label for="firstname">First Name:</label>
-    <input type="text" name="firstname" id="firstname" class="form-control form-control-user" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="lastname">Last Name:</label>
-    <input type="text" name="lastname" id="lastname" class="form-control form-control-user" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="ninNumber">NIN Number:</label>
-    <input type="text" name="ninNumber" id="ninNumber" class="form-control form-control-user" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" class="form-control form-control-user">
-  </div>
-  
-  <div class="form-group">
-    <label for="gender">Gender:</label>
-    <select name="gender" id="gender" class="form-control form-control-user" required>
-      <option value="">Select</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-    </select>
-  </div>
-  
-  <div class="form-group">
-    <label for="phone">Phone Number:</label>
-    <input type="text" name="phone" id="phone" class="form-control form-control-user" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email" class="form-control form-control-user" placeholder="example@exaple.com" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="location">Location/Place:</label>
-    <input type="text" name="location" id="location" class="form-control form-control-user" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="district">District:</label>
-    <input type="text" name="district" id="district" class="form-control form-control-user" required>
-  </div>
-  
+        <div class="form-group">
+          <label for="firstname">First Name:</label>
+          <input type="text" name="firstname" id="firstname" class="form-control form-control-user" required>
+        </div>
 
-  
-  <input type="submit" name="submit" class="btn btn-primary btn-user btn-block" value="Register">
+        <div class="form-group mt-1">
+          <label for="lastname">Last Name:</label>
+          <input type="text" name="lastname" id="lastname" class="form-control form-control-user" required>
+        </div>
 
-</form>
+        <div class="form-group mt-1 ">
+          <label for="ninNumber">NIN Number:</label>
+          <input type="text" name="ninNumber" id="ninNumber" class="form-control form-control-user" required>
+        </div>
 
-</form>
+        <div class="form-group mt-1">
+          <label for="title">Title:</label>
+          <input type="text" name="title" id="title" class="form-control form-control-user">
+        </div>
 
-</form>
+        <div class="form-group mt-1">
+          <label for="gender">Gender:</label>
+          <select name="gender" id="gender" class="form-control form-control-user" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
 
+        <div class="form-group mt-1">
+          <label for="phone">Phone Number:</label>
+          <input type="text" name="phone" id="phone" class="form-control form-control-user" required>
+        </div>
+
+        <div class="form-group mt-1">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" class="form-control form-control-user" placeholder="example@exaple.com" required>
+        </div>
+
+        <div class="form-group mt-1">
+          <label for="location">Location/Place:</label>
+          <input type="text" name="location" id="location" class="form-control form-control-user" required>
+        </div>
+
+        <div class="form-group mt-1">
+          <label for="district">District:</label>
+          <input type="text" name="district" id="district" class="form-control form-control-user" required>
+        </div>
+
+
+        <div class="form-group mt-2">
+        <input type="submit" name="submit" class="btn btn-primary btn-user btn-block" value="Register">
+        </div>
+
+      </form>
     </section>
 
   </main><!-- End #main -->
@@ -388,7 +385,7 @@ session_start();
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-    
+
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer><!-- End Footer -->
@@ -420,7 +417,7 @@ session_start();
 include 'connection/db_connection.php';
 
 // Check if the form is submitted
-if ($_SERVER['REQUEST_METHOD'] ==='POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Validate and sanitize the form input
   $firstname = $conn->real_escape_string($_POST['firstname']);
   $lastname = $conn->real_escape_string($_POST['lastname']);
@@ -437,29 +434,28 @@ if ($_SERVER['REQUEST_METHOD'] ==='POST') {
   $ninQuery = "SELECT * FROM borrowers WHERE ninNumber = '$ninNumber'";
   $ninResult = $conn->query($ninQuery);
   if ($ninResult->num_rows > 0) {
-      $_SESSION['message'] = "Borrower NIN already exists in the database.";
-      echo "<script>window.location.href = 'add-borrowers.php';</script>";
-      exit;
+    $_SESSION['message'] = "Borrower NIN already exists in the database.";
+    echo "<script>window.location.href = 'add-borrowers.php';</script>";
+    exit;
   }
 
   $phoneQuery = "SELECT * FROM borrowers WHERE phone = '$phone'";
   $phoneResult = $conn->query($phoneQuery);
   if ($phoneResult->num_rows > 0) {
-      $_SESSION['message'] = "Phone number already exists";
-      echo "<script>window.location.href = 'add-borrowers.php';</script>";
-      exit;
+    $_SESSION['message'] = "Phone number already exists";
+    echo "<script>window.location.href = 'add-borrowers.php';</script>";
+    exit;
   }
 
-$sql =  "insert into borrowers(firstname,lastname,ninNumber,title,gender,phone, email, location, district) 
+  $sql =  "insert into borrowers(firstname,lastname,ninNumber,title,gender,phone, email, location, district) 
 values('$firstname','$lastname','$ninNumber','$title','$gender','$phone', '$email', '$location', '$district')";
 
-if ($conn->query($sql) === TRUE) {
-$_SESSION['message'] = "Borrower added successfully";
-echo "<script>window.location.href = 'view-borrowers.php';</script>";
-exit;
-} else {
-  echo "Error: ". $conn->error;
-}
-
+  if ($conn->query($sql) === TRUE) {
+    $_SESSION['message'] = "Borrower added successfully";
+    echo "<script>window.location.href = 'view-borrowers.php';</script>";
+    exit;
+  } else {
+    echo "Error: " . $conn->error;
+  }
 }
 ?>
