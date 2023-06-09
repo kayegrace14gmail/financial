@@ -314,7 +314,7 @@
             <div class="card-body">
 
               <!-- Multi Columns Form -->
-              <form action="add-Loan.php" method="post" class="row g-3">
+              <form action="addLoan-form.php" method="post" class="row g-3">
                 <div class="col-md-12">
                   <label for="inputName5" class="form-label">Loan Type</label>
                   <select class="form-select" name="loanType" id="floatingSelect" aria-label="State">
@@ -359,7 +359,7 @@
 
                 <div class="col-12">
                   <label for="inputAddress2" class="form-label">Application Fees</label>
-                  <input type="number" class="form-control" id="inputProcessing" value=5000 name="processingFee" Requested>
+                  <input type="number" class="form-control" id="inputProcessing" value=5000 name="applicationFee" Requested>
                 </div>
 
                 <div class="col-md-6">
@@ -400,7 +400,7 @@
 
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
+                 <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
                 </div>
               </form><!-- End Multi Columns Form -->
 
@@ -448,41 +448,3 @@
 
 </html>
 
-
-
-
-<?php
-include 'connection/db_connection.php';
-
-// Check if the form is submitted
-if ($_SERVER['REQUEST_METHOD'] ==='POST') {
-  // Validate and sanitize the form input
-  $loan_type = $conn->real_escape_string($_POST['loanType']);
-  $borrower = $conn->real_escape_string($_POST['borrower']);
-  $distributed_by = $conn->real_escape_string($_POST['distributedBy']);
-  $amount_requested = $conn->real_escape_string($_POST['amountRequested']);
-  $amount_approved = $conn->real_escape_string($_POST['amountApproved']);
-  $processing_fee = $conn->real_escape_string($_POST['processingFee']);
-  $application_fee = $conn->real_escape_string($_POST['applicationFee']);
-  $loan_period = $conn->real_escape_string($_POST['loanPeriod']);
-  // $approved = $conn->real_escape_string($_POST['approved']);
-  $interest_rate = $conn->real_escape_string($_POST['interestRate']);
-  $release_date = $conn->real_escape_string($_POST['releaseDate']);
-  // $district = mysqli_real_escape_string($conn, $_POST['district']);
-
-// echo $district;
-$sql =  "INSERT INTO loans(loan_type, borrower, distributed_by, amount_requested,
- amount_approved, processing_fee,application_fee, loan_period, interest_rate, release_date)
- VALUES ('$loan_type','$borrower','$distributed_by','$amount_requested','$amount_approved',
-'processing_fee','$application_fee','$loan_period','$interest_rate','$release_date')";
-
-if ($conn->query($sql) === TRUE) {
-echo "<script>window.location.href = 'add-Loan.php';</script>";
-
-exit;
-} else {
-  echo "Error: ". $conn->error;
-}
-
-}
-?>
