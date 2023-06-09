@@ -1,1 +1,2 @@
-# financial_management
+# financial
+For tracking the progress of the project
