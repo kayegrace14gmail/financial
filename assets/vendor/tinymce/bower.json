@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
 	"name": "tinymce",
 	"description": "Web based JavaScript HTML WYSIWYG editor control.",
@@ -24,4 +25,32 @@
 		".npmignore",
 		"CHANGELOG.md"
 	]
+=======
+{
+	"name": "tinymce",
+	"description": "Web based JavaScript HTML WYSIWYG editor control.",
+	"license": "MIT",
+	"keywords": [
+		"wysiwyg",
+		"tinymce",
+		"richtext",
+		"javascript",
+		"html",
+		"text",
+		"rich editor",
+		"rich text editor",
+		"rte",
+		"rich text",
+		"contenteditable",
+		"editing"
+	],
+	"homepage": "https://www.tiny.cloud/",
+	"ignore": [
+		"README.md",
+		"composer.json",
+		"package.json",
+		".npmignore",
+		"CHANGELOG.md"
+	]
+>>>>>>> ed2c91949ebbdd7155591017734f8ca156d00c61
 }

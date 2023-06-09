@@ -134,7 +134,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-grid"></i>
           <span>Home Branch</span>
         </a>
@@ -147,22 +147,22 @@
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
          <li>
-            <a href="view-borrowers.html">
+            <a href="view-borrowers.php">
               <i class="bi bi-circle"></i><span>View Borrowers</span>
             </a>
           </li>
           <li>
-            <a href="add-borrowers.html">
+            <a href="add-borrowers.php">
               <i class="bi bi-circle"></i><span>Add Borrowers</span>
             </a>
           </li>
           <li>
-            <a href="view-borrower-groups.html">
+            <a href="view-borrower-groups.php">
               <i class="bi bi-circle"></i><span>View Borrower Groups</span>
             </a>
           </li>
           <li>
-            <a href="add-borrower-group.html">
+            <a href="add-borrower-group.php">
               <i class="bi bi-circle"></i><span>Add Borrower Groups</span>
             </a>
           </li>
@@ -186,17 +186,17 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="view-loans.html">
+            <a href="view-loans.php">
               <i class="bi bi-circle"></i><span>View All Loans</span>
             </a>
           </li>
           <li>
-            <a href="add-Loan.html">
+            <a href="add-Loan.php">
               <i class="bi bi-circle"></i><span>Add Loan</span>
             </a>
           </li>
           <li>
-          <a href="due-loans.html">
+          <a href="due-loans.php">
               <i class="bi bi-circle"></i><span>Due Loan</span>
             </a>
           </li>
@@ -214,12 +214,12 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="view-payments.html">
+            <a href="view-payments.php">
               <i class="bi bi-circle"></i><span>View Payments</span>
             </a>
           </li>
           <li>
-            <a href="approve-payment.html">
+            <a href="approve-payment.php">
               <i class="bi bi-circle"></i><span>Approve Payments</span>
             </a>
           </li>
@@ -232,12 +232,12 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="view-reports.html">
+            <a href="view-reports.php">
               <i class="bi bi-circle"></i><span>View Reports</span>
             </a>
           </li>
           <li>
-            <a href="generate-reports.html">
+            <a href="generate-reports.php">
               <i class="bi bi-circle"></i><span>Generate Reports</span>
             </a>
           </li>
@@ -246,42 +246,42 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="users-profile.php">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="pages-contact.php">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" href="pages-register.php">
           <i class="bi bi-card-list"></i>
           <span>Register</span>
         </a>
       </li><!-- End Register Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="pages-login.php">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
       </li><!-- End Login Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
+        <a class="nav-link collapsed" href="pages-error-404.php">
           <i class="bi bi-dash-circle"></i>
           <span>Error 404</span>
         </a>
       </li><!-- End Error 404 Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
+        <a class="nav-link collapsed" href="pages-blank.php">
           <i class="bi bi-file-earmark"></i>
           <span>Blank</span>
         </a>
@@ -294,137 +294,113 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Form Layouts</h1>
+      <h1>Add Loan</h1>
       <nav>
-        <ol class="breadcrumb">
+      <!-- <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Forms</li>
           <li class="breadcrumb-item active">Layouts</li>
         </ol>
-      </nav>
+      </nav>-->
     </div><!-- End Page Title -->
     <section class="section">
       <div class="row">
         <div class="col-lg-6">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Horizontal Form</h5>
-
-              <!-- Horizontal Form -->
-              <form>
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Your Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword">
-                  </div>
-                </div>
-                <fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                      <label class="form-check-label" for="gridRadios1">
-                        First radio
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                      <label class="form-check-label" for="gridRadios2">
-                        Second radio
-                      </label>
-                    </div>
-                    <div class="form-check disabled">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                      <label class="form-check-label" for="gridRadios3">
-                        Third disabled radio
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-                <div class="row mb-3">
-                  <div class="col-sm-10 offset-sm-2">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck1">
-                      <label class="form-check-label" for="gridCheck1">
-                        Example checkbox
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form><!-- End Horizontal Form -->
 
             </div>
           </div>
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Multi Columns Form</h5>
 
               <!-- Multi Columns Form -->
-              <form class="row g-3">
+              <form action="addLoan-form.php" method="post" class="row g-3">
                 <div class="col-md-12">
-                  <label for="inputName5" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" id="inputName5">
+                  <label for="inputName5" class="form-label">Loan Type</label>
+                  <select class="form-select" name="loanType" id="floatingSelect" aria-label="State">
+                      <option selected>Business Loan</option>
+                      <option value="1">Personal Loan</option>
+                      <option value="2">Student Loan</option>
+                    </select>
                 </div>
                 <div class="col-md-6">
-                  <label for="inputEmail5" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail5">
+                  <label for="inputBorrower" class="form-label">Borrower</label>
+                  <input type="text" name="borrower" class="form-control" id="borrower">
                 </div>
+                <!--<div class="col-md-6">
+                  <label for="loan-number" class="form-label">Loan Number</label>
+                  <input type="text" class="form-control" name="loa" id="loan-number">
+                </div> -->
+                <hr>
+                <div style="color:blue"><h3>Loan Terms</h3></div>
+                <div class="col-12">
+                  <!--<p style="color:red">Principal:</p>-->
+                  <!--<label for="inputAddress5" class="form-label">Address</label>-->
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Distributed By</label>
+                  <select class="form-select" name="distributedBy">
+                  <option selected>Cash</option>
+                      <option value="1">Cheque</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Amount Requested</label>
+                  <input type="number" class="form-control" id="inputRequested" name="amountRequested" placeholder="Amount Requested">
+                </div>
+
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Amount Approved</label>
+                  <input type="number" class="form-control" id="inputApproved" name="amountApproved" placeholder="Amount Approved">
+                </div>
+
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Processing Fees</label>
+                  <input type="number" class="form-control" id="inputProcessing" value=15000 name="processingFee" Requested>
+                </div>
+
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Application Fees</label>
+                  <input type="number" class="form-control" id="inputProcessing" value=5000 name="applicationFee" Requested>
+                </div>
+
                 <div class="col-md-6">
-                  <label for="inputPassword5" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword5">
+                  <label for="inputCity" class="form-label">Loan Period(Months)</label>
+                  <select class="form-select" name="loanPeriod">
+                  <option selected>1</option>
+                      <option value="1">2</option>
+                      <option value="1">3</option>
+                      <option value="1">4</option>
+                      <option value="1">5</option>
+                      <option value="1">6</option>
+                      <option value="1">7</option>
+                      <option value="1">8</option>
+                      <option value="1">9</option>
+                      <option value="1">10</option>
+                      <option value="1">11</option>
+                      <option value="1">12</option>
+                    </select>
                 </div>
-                <div class="col-12">
-                  <label for="inputAddress5" class="form-label">Address</label>
-                  <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St">
-                </div>
-                <div class="col-12">
-                  <label for="inputAddress2" class="form-label">Address 2</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
+            
                 <div class="col-md-6">
-                  <label for="inputCity" class="form-label">City</label>
-                  <input type="text" class="form-control" id="inputCity">
+                  <label for="inputCity" class="form-label">Interest Rate(%age)</label>
+                  <select class="form-select"name="interestRate">
+                  <option selected>5</option>
+                      <option value="1">6</option>
+                      <option value="1">7</option>
+                      <option value="1">8</option>
+                      <option value="1">9</option>
+                      <option value="1">10</option>
+                    </select>
                 </div>
-                <div class="col-md-4">
-                  <label for="inputState" class="form-label">State</label>
-                  <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
+               
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">Loan Release date</label>
+                  <input type="date" class="form-control" name="loanReleaseDate" id="inputDate">
                 </div>
-                <div class="col-md-2">
-                  <label for="inputZip" class="form-label">Zip</label>
-                  <input type="text" class="form-control" id="inputZip">
-                </div>
-                <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Check me out
-                    </label>
-                  </div>
-                </div>
+                <hr>
+
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
+                 <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
                 </div>
               </form><!-- End Multi Columns Form -->
 
@@ -432,138 +408,6 @@
           </div>
 
         </div>
-
-        <div class="col-lg-6">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Vertical Form</h5>
-
-              <!-- Vertical Form -->
-              <form class="row g-3">
-                <div class="col-12">
-                  <label for="inputNanme4" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" id="inputNanme4">
-                </div>
-                <div class="col-12">
-                  <label for="inputEmail4" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4">
-                </div>
-                <div class="col-12">
-                  <label for="inputPassword4" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword4">
-                </div>
-                <div class="col-12">
-                  <label for="inputAddress" class="form-label">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form><!-- Vertical Form -->
-
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">No Labels / Placeholders as labels Form</h5>
-
-              <!-- No Labels Form -->
-              <form class="row g-3">
-                <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Your Name">
-                </div>
-                <div class="col-md-6">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col-md-6">
-                  <input type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="col-12">
-                  <input type="text" class="form-control" placeholder="Address">
-                </div>
-                <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="City">
-                </div>
-                <div class="col-md-4">
-                  <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div>
-                <div class="col-md-2">
-                  <input type="text" class="form-control" placeholder="Zip">
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form><!-- End No Labels Form -->
-
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Floating labels Form</h5>
-
-              <!-- Floating Labels Form -->
-              <form class="row g-3">
-                <div class="col-md-12">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
-                    <label for="floatingName">Your Name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingEmail" placeholder="Your Email">
-                    <label for="floatingEmail">Your Email</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" id="floatingTextarea" style="height: 100px;"></textarea>
-                    <label for="floatingTextarea">Address</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="col-md-12">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingCity" placeholder="City">
-                      <label for="floatingCity">City</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingSelect" aria-label="State">
-                      <option selected>New York</option>
-                      <option value="1">Oregon</option>
-                      <option value="2">DC</option>
-                    </select>
-                    <label for="floatingSelect">State</label>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingZip" placeholder="Zip">
-                    <label for="floatingZip">Zip</label>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form><!-- End floating Labels Form -->
 
             </div>
           </div>
@@ -580,10 +424,7 @@
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer><!-- End Footer -->
@@ -606,3 +447,4 @@
 </body>
 
 </html>
+

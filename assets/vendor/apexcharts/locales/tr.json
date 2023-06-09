@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "tr",
   "options": {
@@ -53,3 +54,60 @@
     }
   }
 }
+=======
+{
+  "name": "tr",
+  "options": {
+    "months": [
+      "Ocak",
+      "Şubat",
+      "Mart",
+      "Nisan",
+      "Mayıs",
+      "Haziran",
+      "Temmuz",
+      "Ağustos",
+      "Eylül",
+      "Ekim",
+      "Kasım",
+      "Aralık"
+    ],
+    "shortMonths": [
+      "Oca",
+      "Şub",
+      "Mar",
+      "Nis",
+      "May",
+      "Haz",
+      "Tem",
+      "Ağu",
+      "Eyl",
+      "Eki",
+      "Kas",
+      "Ara"
+    ],
+    "days": [
+      "Pazar",
+      "Pazartesi",
+      "Salı",
+      "Çarşamba",
+      "Perşembe",
+      "Cuma",
+      "Cumartesi"
+    ],
+    "shortDays": ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"],
+    "toolbar": {
+      "exportToSVG": "SVG İndir",
+      "exportToPNG": "PNG İndir",
+      "exportToCSV": "CSV İndir",
+      "menu": "Menü",
+      "selection": "Seçim",
+      "selectionZoom": "Seçim Yakınlaştır",
+      "zoomIn": "Yakınlaştır",
+      "zoomOut": "Uzaklaştır",
+      "pan": "Kaydır",
+      "reset": "Yakınlaştırmayı Sıfırla"
+    }
+  }
+}
+>>>>>>> ed2c91949ebbdd7155591017734f8ca156d00c61

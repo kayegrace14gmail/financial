@@ -29,13 +29,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Mar 09 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -186,17 +179,17 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="view-loans.html">
+            <a href="view-loans.php">
               <i class="bi bi-circle"></i><span>View All Loans</span>
             </a>
           </li>
           <li>
-            <a href="add-Loan.html">
+            <a href="add-Loan.php">
               <i class="bi bi-circle"></i><span>Add Loan</span>
             </a>
           </li>
           <li>
-          <a href="due-loans.html">
+          <a href="due-loans.php">
               <i class="bi bi-circle"></i><span>Due Loan</span>
             </a>
           </li>
@@ -604,9 +597,9 @@
           </div><!-- End Recent Activity -->
 
             </div>
-          </div> End News & Updates 
+          </div> End News & Updates
 
-        </div> End Right side columns  -->
+        </div> End Right side columns
 
       </div>
     </section>
